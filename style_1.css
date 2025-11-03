@@ -31,14 +31,8 @@ button {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    margin-left: auto;
     border-radius: 10px;
-}
-
-button:hover {
-    transform: scale(1.05);
-    transition: transform 0.2s;
-    background-color: #afafaf;
-    color: blue;
 }
 
 .btn-signin {
@@ -68,9 +62,7 @@ body {
 .content {
     text-align: center;
     align-content: center;
-    height: max-content;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    height: 500px;
     background-color: #f2f2f2;
 }
 
@@ -161,70 +153,4 @@ li:hover {
 .social-media-icons img:hover {
     transform: scale(1.1);
     transition: transform 0.2s; 
-}
-
-.calculator-container {
-    text-align: center;
-    align-content: center;
-    background-color: grey;
-    padding: 20px;
-    width:fit-content;
-    border-radius: 20px;
-    box-shadow: #000000 0px 0px 15px;
-    border: 10px solid rgb(105, 105, 105);
-}
-
-.project-section{
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(3, 60px);
-    grid-gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.btn-equals{
-    grid-column: span 2;
-    font-size: 18px;
-    cursor: pointer;
-    width: 100%;
-    background-color:yellowgreen;
-}
-
-.btn-num{
-    font-size: 18px;
-    cursor: pointer;
-    align-items: center;
-}
-
-.btn-op{
-    background-color: orange;
-    color: #f2f2f2;
-
-}
-
-.btn-clear{
-    background-color: red;
-    color: #f2f2f2;
-}
-
-#display{
-    grid-column: span 3;
-    font-size: 24px;
-    text-align: right;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 10px;
-    background-color: blanchedalmond;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow:ellipsis;
 }
