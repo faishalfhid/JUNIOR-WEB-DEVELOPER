@@ -1,4 +1,4 @@
-let suhu = 30;
+let suhu = 0;
 
 if (suhu > 35) {
   console.log("Cuaca panas");

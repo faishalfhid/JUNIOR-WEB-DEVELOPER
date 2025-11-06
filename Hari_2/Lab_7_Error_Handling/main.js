@@ -1,6 +1,5 @@
-let currentInput = 2*2;
-// let currentInput = "Teks";
-
+// let currentInput = 2*2;
+let currentInput = "Teks";
 
 try {
     currentInput = eval (currentInput);

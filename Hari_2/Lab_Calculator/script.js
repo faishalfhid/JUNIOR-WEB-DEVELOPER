@@ -1,25 +1,21 @@
-// Ambil elemen tampilan dari HTML
-const display = document.getElementById("_____"); // TODO: isi id-nya
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll(".buttons button");
 
-// Ambil semua tombol dari container
-const buttons = document.querySelectorAll("____"); // TODO: isi selector-nya
+let currentInput = "";
 
-let currentInput = ""; // Menyimpan input dari pengguna
-
-// Loop setiap tombol
 buttons.forEach(button => {
-  button.addEventListener("____", () => { // TODO: isi jenis event
-    const value = button.____; // TODO: ambil teks dari tombol
+  button.addEventListener("click", () => {
+    const value = button.textContent;
 
     if (value === "C") {
       currentInput = "";
-      display.textContent = "____"; // TODO: tampilkan nilai awal
+      display.textContent = "0";
     } else if (value === "=") {
       try {
-        currentInput = ____ (currentInput); // TODO: fungsi untuk evaluasi ekspresi
+        currentInput = eval(currentInput);
         display.textContent = currentInput;
       } catch {
-        display.textContent = "____"; // TODO: pesan jika error
+        display.textContent = "Error";
       }
     } else {
       currentInput += value;
