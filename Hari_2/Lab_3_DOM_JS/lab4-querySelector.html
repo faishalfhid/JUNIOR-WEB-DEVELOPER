@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>querySelector Example</title>
+</head>
+<body>
+  <div class="kotak pertama">Kotak 1</div>
+  <div class="kotak kedua">Kotak 2</div> <!-- Tidak akan terpengaruh -->
+  <button onclick="ubah()">Ubah Kotak</button>
+
+  <script>
+    function ubah() {
+      const elemen = document.querySelector(".kotak");
+      elemen.style.backgroundColor = "lightgreen";
+      elemen.textContent = "Kotak ini diubah dengan querySelector()";
+    }
+  </script>
+</body>
+</html>

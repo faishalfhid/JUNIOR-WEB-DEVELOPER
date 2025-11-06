@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>querySelectorAll Example</title>
+</head>
+<body>
+  <div class="kotak">Kotak 1</div>
+  <div class="kotak">Kotak 2</div>
+  <div class="kotak">Kotak 3</div>
+  <button onclick="ubah()">Ubah Semua Kotak</button>
+
+  <script>
+    function ubah() {
+      const elemen = document.querySelectorAll(".kotak");
+      for (let i = 0; i < elemen.length; i++) {
+        elemen[i].style.backgroundColor = "lightblue";
+        elemen[i].style.padding = "10px";
+        elemen[i].textContent += " (diubah)";
+      }
+    }
+  </script>
+</body>
+</html>

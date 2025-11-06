@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener - Input</title>
+</head>
+<body>
+  <h2>Event Listener: Input</h2>
+  <input id="inputNama" type="text" placeholder="Ketik sesuatu...">
+  <p id="hasil"></p>
+
+  <script>
+    const input = document.getElementById("inputNama");
+    const hasil = document.getElementById("hasil");
+
+    input.addEventListener("input", function() {
+      hasil.textContent = "Kamu mengetik: " + input.value;
+      hasil.style.color = "green";
+    });
+  </script>
+</body>
+</html>

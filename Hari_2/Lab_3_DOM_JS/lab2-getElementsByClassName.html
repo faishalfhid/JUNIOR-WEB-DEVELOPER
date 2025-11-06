@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByClassName Example</title>
+</head>
+<body>
+  <p class="pesan">Pesan 1</p>
+  <p class="pesan">Pesan 2</p>
+  <p class="pesan">Pesan 3</p>
+  <button onclick="ubahWarna()">Ubah Warna</button>
+
+  <script>
+    function ubahWarna() {
+      const elemen = document.getElementsByClassName("pesan");
+      for (let i = 0; i < elemen.length; i++) {
+        elemen[i].style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

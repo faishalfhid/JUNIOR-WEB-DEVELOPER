@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.container {
+  margin: 20px auto;
+  background-color: white;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  width: 80%;
+  height: fit-content;
+}
+
+.item {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === FLEXBOX SECTION === */
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;               
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* flex-direction: row-reverse; */
+}
+
+.flexbox .item {
+    flex-basis: 100px; /* Ukuran dasar sebelum pertumbuhan atau penyusutan */
+    /* flex-grow: 1; */
+}
+
+/* === GRID SECTION === */
+.grid{
+  display: grid;
+  /* fr = fraction of the available space → bagian dari ruang yang tersedia. */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px); 
+  gap: 10px;
+}
+
+.item3 {
+  grid-column: 3;        
+  grid-row: 1 / 3;  /* Menggabungkan baris 1 dan 2 */
+  background-color: rgb(255, 0, 0);      
+}
+
+.item6 {
+  display: none; /* disembunyikan karena digantikan oleh area gabungan item3 */
+}
+

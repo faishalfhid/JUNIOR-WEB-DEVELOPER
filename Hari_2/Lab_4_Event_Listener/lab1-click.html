@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener - Click</title>
+</head>
+<body>
+  <h2>Event Listener: Click</h2>
+  <button id="tombolKlik">Klik Saya</button>
+  <p id="hasil"></p>
+
+  <script>
+    const tombol = document.getElementById("tombolKlik");
+    const hasil = document.getElementById("hasil");
+
+    tombol.addEventListener("click", function() {
+      hasil.textContent = "Tombol berhasil diklik!";
+      hasil.style.color = "blue";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByTagName Example</title>
+</head>
+<body>
+  <h3>Judul 1</h3>
+  <h3>Judul 2</h3>
+  <h3>Judul 3</h3>
+  <button onclick="ubahBackground()">Ubah Background</button>
+
+  <script>
+    function ubahBackground() {
+      const headings = document.getElementsByTagName("h3");
+      for (let i = 0; i < headings.length; i++) {
+        headings[i].style.backgroundColor = "yellow";
+      }
+    }
+  </script>
+</body>
+</html>

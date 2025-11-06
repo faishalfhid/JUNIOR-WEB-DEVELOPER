@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event Listener - Mouseover & Mouseout</title>
+</head>
+<body>
+  <h2>Event Listener: Mouseover</h2>
+  <div id="kotak" style="width:200px; height:100px; background:lightgray; text-align:center; line-height:100px;">
+    Arahkan mouse ke sini
+  </div>
+
+  <script>
+    const kotak = document.getElementById("kotak");
+
+    kotak.addEventListener("mouseover", function() {
+      kotak.style.backgroundColor = "lightblue";
+      kotak.textContent = "Mouse di atas kotak!";
+    });
+
+    kotak.addEventListener("mouseout", function() {
+      kotak.style.backgroundColor = "lightgray";
+      kotak.textContent = "Mouse keluar dari kotak!";
+    });
+  </script>
+</body>
+</html>
