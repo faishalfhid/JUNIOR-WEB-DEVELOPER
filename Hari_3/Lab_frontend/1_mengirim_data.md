@@ -9,7 +9,7 @@
 
 ## 🚀 STEP 1: Setup Struktur Dasar PHP + HTML
 
-### Buka file `index.php` dan tambahkan di BARIS PALING ATAS:
+### Buka file `project.php` dan tambahkan di BARIS PALING ATAS:
 
 ```php
 <?php
@@ -106,17 +106,13 @@ include 'php/koneksi.php';
 
 ## 🚀 STEP 4: Implementasi JavaScript
 
-### Buat file `script.js` atau tambahkan di bagian bawah `index.php`:
+### Buat file `script.js` atau tambahkan di bagian bawah `project.php`:
 
 ```javascript
 // Ambil element yang dibutuhkan
-const display = document.getElementById("display");
 const resultInput = document.getElementById("resultInput");
 const form = document.getElementById("calcForm");
 
-// Variabel untuk menyimpan input sementara
-let currentInput = "0";
-let shouldResetDisplay = false;
 
 // Tambahkan event listener untuk semua tombol
 document.querySelectorAll('.btn-num, .btn-op, .btn-clear, .btn-equals').forEach(button => {
@@ -124,26 +120,13 @@ document.querySelectorAll('.btn-num, .btn-op, .btn-clear, .btn-equals').forEach(
         const value = this.textContent;
         
         if (value === "C") {
-            // Clear calculator
-            currentInput = "0";
-            display.textContent = "0";
-            shouldResetDisplay = false;
-            
+            // Default
         } else if (value === "=") {
-            // Hitung hasil dan kirim ke database
             try {
-                // Evaluasi perhitungan
-                const calculationResult = eval(currentInput);
-                
-                // Tampilkan hasil di display
-                display.textContent = calculationResult;
-                
-                // ISI INPUT TERSEMBUNYI dengan hasil
-                resultInput.value = calculationResult;
-                
-                console.log("Mengirim hasil ke database:", resultInput.value);
-                
-                // KIRIM FORM SECARA OTOMATIS ke save.php
+                currentInput = eval(currentInput);
+                display.textContent = currentInput;
+                resultInput.value = currentInput;
+                console.log("Mengirim hasil:", resultInput.value); // DEBUG
                 form.submit();
                 
             } catch (error) {
@@ -151,14 +134,7 @@ document.querySelectorAll('.btn-num, .btn-op, .btn-clear, .btn-equals').forEach(
             }
             
         } else {
-            // Tombol angka dan operator
-            if (shouldResetDisplay) {
-                currentInput = value;
-                shouldResetDisplay = false;
-            } else {
-                currentInput = currentInput === "0" ? value : currentInput + value;
-            }
-            display.textContent = currentInput;
+            // Default
         }
     });
 });
@@ -166,42 +142,8 @@ document.querySelectorAll('.btn-num, .btn-op, .btn-clear, .btn-equals').forEach(
 
 ---
 
-## 🚀 STEP 5: Buat File save.php
 
-### Buat file `php/save.php` dengan kode:
-
-```php
-<?php
-include 'koneksi.php';  // Jangan lupa include koneksi!
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Ambil data dari input tersembunyi
-    $hasil = $_POST['result'] ?? '';
-    
-    // Validasi data tidak kosong
-    if (!empty($hasil) || $hasil === '0') {
-        // Simpan ke database
-        $sql = "INSERT INTO history (hasil) VALUES ('$hasil')";
-        
-        if ($conn->query($sql) === TRUE) {
-            // Redirect kembali ke halaman utama
-            header("Location: ../index.php");
-            exit;
-        } else {
-            echo "Error: " . $conn->error;
-        }
-    } else {
-        echo "Hasil kosong, tidak disimpan.";
-    }
-}
-
-$conn->close();
-?>
-```
-
----
-
-## 🚀 STEP 6: Testing Lengkap
+## 🚀 STEP 5: Testing Lengkap
 
 ### Test 1: Kalkulator Normal
 1. **Buka** `http://localhost/project_anda`

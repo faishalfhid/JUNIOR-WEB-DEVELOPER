@@ -3,7 +3,8 @@
 ```
 project-starter/
 │
-├── 📄 index.php                          # File utama (HOME PAGE)
+├── 📄 index.html                         # File utama (HOME PAGE)
+├── 📄 project.php                        # File kalkulator
 ├── 🎨 style.css                          # Stylesheet untuk tampilan
 ├── ⚙️ script.js                          # JavaScript untuk kalkulator
 │
