@@ -1,5 +1,3 @@
-# Tutorial Step by Step: Implementasi POST Method dengan Input Tersembunyi
-
 ## 📋 Persiapan Sebelum Memulai
 
 ### File yang Harus Sudah Ada:
