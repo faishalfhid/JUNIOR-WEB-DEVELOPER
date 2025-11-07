@@ -1,0 +1,15 @@
+## 📁 STRUKTUR FOLDER & FILE
+
+```
+project-starter/
+│
+├── 📄 index.php                          # File utama (HOME PAGE)
+├── 🎨 style.css                          # Stylesheet untuk tampilan
+├── ⚙️ script.js                          # JavaScript untuk kalkulator
+│
+├── 📂 php/                              # Folder backend PHP
+    ├── 🔗 koneksi.php                   # Koneksi database
+    ├── 💾 save.php                      # Menyimpan hasil ke database
+    └── 🗑️ delete.php                    # Menghapus data history
+
+```
